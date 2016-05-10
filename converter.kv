@@ -3,6 +3,7 @@ BoxLayout:
     BoxLayout:
         orientation: 'horizontal'
         TextInput:
+            id: input_number
             text: '34'
             font_size: 60
         BoxLayout:
@@ -10,11 +11,15 @@ BoxLayout:
             size_hint_x: 0.25
             Button:
                 text: 'Up'
+                on_press: app.handle_increment(1)
             Button:
                 text: 'Down'
-    Button:
-        text: 'Convert m to km'
+                on_press: app.handle_increment(-1)
+#    Button:
+#        text: 'Convert m to km'
+#        on_press: app.handle_calculate()
     Label:
+        id: output_label
         color: (1, 1, 0, 1)
         text: '54.717'
         font_size: 60
